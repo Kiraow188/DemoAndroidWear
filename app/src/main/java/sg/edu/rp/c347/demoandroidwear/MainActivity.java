@@ -48,12 +48,10 @@ public class MainActivity extends AppCompatActivity {
                 PendingIntent pendingIntentReply = PendingIntent.getActivity(MainActivity.this, 0, intentreply, PendingIntent.FLAG_UPDATE_CURRENT);
 
                 RemoteInput ri = null;
-//                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT_WATCH) {
                     ri = new RemoteInput.Builder("status")
                             .setLabel("Status report")
                             .setChoices(new String[] {"Done", "Not yet"})
                             .build();
-//                }
 
                 NotificationCompat.Action action2 = new NotificationCompat.Action.Builder(R.mipmap.ic_launcher, "Reply", pendingIntentReply)
                         .addRemoteInput(ri)
